@@ -5,3 +5,6 @@ youtube.dl
 pafy
 pafy youtube.dl
 requests
+pymovie
+moviepy
+pygame
