@@ -1,25 +1,11 @@
-# Import the argparse library
 import argparse
 
-import os
-import sys
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                    help='an integer for the accumulator')
+parser.add_argument('--sum', dest='accumulate', action='store_const',
+                    const=sum, default=max,
+                    help='sum the integers (default: find the max)')
 
-# Create the parser
-my_parser = argparse.ArgumentParser(description='List the content of a folder')
-
-# Add the arguments
-my_parser.add_argument('Path',
-                       metavar='path',
-                       type=str,
-                       help='the path to list')
-
-# Execute the parse_args() method
-args = my_parser.parse_args()
-
-input_path = args.Path
-
-if not os.path.isdir(input_path):
-    print('The path specified does not exist')
-    sys.exit()
-
-print('\n'.join(os.listdir(input_path)))
+args = parser.parse_args()
+print(args.accumulate(args.integers))
