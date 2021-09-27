@@ -1,6 +1,6 @@
 from functions import *
 from search import *
-from threading import *
+from threading import Thread
 from sounds import *
 from PIL import Image
 def cls():
