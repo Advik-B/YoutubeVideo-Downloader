@@ -4,8 +4,8 @@ from time import sleep
 
 cwd  = os.getcwd()
 
-cmd.run('python -m pip install pyflakes' , timeout=10)
-cmd.run('python -m pip install pylint' , timeout=10)
+os.system('python -m pip install pyflakes')
+os.system('python -m pip install pylint')
 
 ignore_paths = [
 
