@@ -1,14 +1,22 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Python App
+name: Python Lint
 
 on:
   push:
-    branches: [ Master ]
   pull_request:
-    branches: [ Master ]
+      
 
+  workflow_dispatch:
+    inputs:
+      dir:
+       description: 'directory to test python files' 
+       
+       default: '.'
+       
+       required: true
+   
 
 jobs:
   Lint:
@@ -29,4 +37,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8 and pyflakes
       run: |
-        python run-tests.py
+        python run-tests.py -d ${{ github.event.inputs.dir }}
