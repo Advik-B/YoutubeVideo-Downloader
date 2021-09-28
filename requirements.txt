@@ -1,6 +1,3 @@
-urllib.request
-urllib.parse
-re
 youtube.dl
 pafy
 requests
