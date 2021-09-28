@@ -16,11 +16,7 @@ ignore_paths = [
 
 files_n_dirs = os.listdir()
 
-pyflakes_version = cmd.check_output('py -m pyflakes -V' , shell=True)
-
 files_to_test = list()
-
-print(pyflakes_version)
 
 for file in files_n_dirs:
     if file.endswith('.py'):
