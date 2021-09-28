@@ -28,5 +28,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8 and pyflakes
       run: |
-        python -m flake8
-        python -m pyflakes .
+        python run-tests.py
