@@ -1,3 +1,4 @@
+from email.policy import default
 import subprocess as cmd
 import os
 import optparse
@@ -5,7 +6,7 @@ from time import sleep
 
 parser = optparse.OptionParser()
 
-parser.add_option('-d' , '--dir' , dest='dir' , help='Path of the directory in which the files are to test')
+parser.add_option('-d' , '--dir' , dest='dir' , help='Path of the directory in which the files are to test' , default=None)
 
 options , args = parser.parse_args()
 
