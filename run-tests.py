@@ -1,8 +1,6 @@
-from email.policy import default
 import subprocess as cmd
 import os
 import optparse
-from time import sleep
 
 parser = optparse.OptionParser()
 
@@ -33,7 +31,6 @@ print('The following files will be checked:\n')
 for file in files_to_test:
     print(f'  ./{file}')
 
-sleep(3)
 
 print()
 print('-'*80)
@@ -58,8 +55,6 @@ for file in files_to_test:
         print()
         print()
         print('pylint:\n\t' , p)
-    # print(p)
-    sleep(3)
     print()
     print('-'*80)
     print()
