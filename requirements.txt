@@ -1,6 +1,0 @@
-youtube.dl
-pafy
-requests
-pymovie
-moviepy
-pygame
