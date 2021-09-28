@@ -4,8 +4,8 @@ from time import sleep
 
 cwd  = os.getcwd()
 
-os.system('python -m pip install pyflakes')
-os.system('python -m pip install pylint')
+cmd.run('python -m pip install pyflakes' , shell=True)
+cmd.run('python -m pip install pylint' , shell=True)
 
 ignore_paths = [
 
@@ -16,10 +16,11 @@ ignore_paths = [
 
 files_n_dirs = os.listdir()
 
-pyflakes_version = cmd.check_output('py -m pyflakes -V')
+pyflakes_version = cmd.check_output('py -m pyflakes -V' , shell=True)
 
 files_to_test = list()
 
+print(pyflakes_version)
 
 for file in files_n_dirs:
     if file.endswith('.py'):
