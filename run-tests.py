@@ -1,8 +1,20 @@
 import subprocess as cmd
 import os
+import optparse
 from time import sleep
 
-cwd  = os.getcwd()
+parser = optparse.OptionParser()
+
+parser.add_option('-d' , '--dir' , dest='dir' , help='Path of the directory in which the files are to test')
+
+options , args = parser.parse_args()
+
+# print(options.dir)
+
+if not options.dir or str(options.dir)=='.':
+    cwd = os.getcwd()
+else:
+    cwd = str(options.dir)
 
 cmd.run('python -m pip install pyflakes' , shell=True , cwd=cwd)
 cmd.run('python -m pip install pylint' , shell=True , cwd=cwd)
