@@ -8,14 +8,7 @@ on:
     branches: [ Master ]
   pull_request:
     branches: [ Master ]
-  workflow_dispatch:
-    inputs:
-      dir:
-       description: 'directory to test python files' 
-       
-       default: '.'
-       
-       required: true
+
 
 jobs:
   Lint:
@@ -36,4 +29,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8 and pyflakes
       run: |
-        python run-tests.py -d ${{ github.event.inputs.dir }}
+        python run-tests.py
