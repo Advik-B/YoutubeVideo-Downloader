@@ -50,10 +50,6 @@ for file in files_to_test:
         print()
         print()
         print('pylint:\n\t' , p)
-
-    if p:
-        print('Suggestions:\n')
-        print(p.replace('************* ' , ''))
     # print(p)
     sleep(3)
     print()
