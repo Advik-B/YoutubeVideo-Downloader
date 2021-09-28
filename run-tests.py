@@ -37,8 +37,8 @@ print()
 for file in files_to_test:
     print(f'Checking: ./{file} 🔎')
     print()
-    o = cmd.getoutput(f'py -m pyflakes ./{file}')
-    p = cmd.getoutput(f'py -m pylint ./{file}')
+    o = cmd.getoutput(f'python -m pyflakes ./{file}')
+    p = cmd.getoutput(f'python -m pylint ./{file}')
 
     if not o or not p:
         print('No problems found!')
