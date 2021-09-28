@@ -4,15 +4,8 @@ from time import sleep
 
 cwd  = os.getcwd()
 
-cmd.run('python -m pip install pyflakes' , shell=True)
-cmd.run('python -m pip install pylint' , shell=True)
-
-ignore_paths = [
-
-    '__init__.py',
-
-    'run-tests.py'
-]
+cmd.run('python -m pip install pyflakes' , shell=True , cwd=cwd)
+cmd.run('python -m pip install pylint' , shell=True , cwd=cwd)
 
 files_n_dirs = os.listdir()
 
@@ -26,6 +19,8 @@ print('The following files will be checked:\n')
 
 for file in files_to_test:
     print(f'  ./{file}')
+
+sleep(3)
 
 print()
 print('-'*80)
