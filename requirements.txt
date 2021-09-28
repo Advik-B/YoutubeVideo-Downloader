@@ -3,7 +3,6 @@ urllib.parse
 re
 youtube.dl
 pafy
-pafy youtube.dl
 requests
 pymovie
 moviepy
