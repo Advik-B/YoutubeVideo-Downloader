@@ -1,21 +1,20 @@
 from threading import Thread
 from platform import system
-from subprocess import call
+from subprocess import run
 from time import sleep
+import os
 try:
     from functions import *
     from search import *
     from sounds import *
+    from PIL import Image
 except ModuleNotFoundError:
-    from platform import system
-    from subprocess import run
-    call('python -m pip install -r requirements.txt' , shell=True)
-    sleep(10)
+    run('python -m pip install -r requirements.txt' , shell=True)
+    # sleep(10)
     from functions import *
     from search import *
     from sounds import *
-
-from PIL import Image
+    from PIL import Image
 #TODO: add support to use optprase module
 
 # -Functions-
