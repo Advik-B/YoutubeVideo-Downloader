@@ -1,3 +1,4 @@
+colorama
 youtube_dl
 pafy
 simpleaudio
