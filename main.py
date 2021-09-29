@@ -10,7 +10,6 @@ try:
     from PIL import Image
 except ModuleNotFoundError:
     run('python -m pip install -r requirements.txt' , shell=True)
-    # sleep(10)
     from functions import *
     from search import *
     from sounds import *
