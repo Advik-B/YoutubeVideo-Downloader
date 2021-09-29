@@ -18,10 +18,16 @@ except ModuleNotFoundError:
 
 # -Functions-
 def cls():
-    print(system())
-    os.system('cls')
+    platform = system().casefold()
+
+    if platform == 'windows':
+        run('cls' , shell=True)
+    elif platform == 'linux' or platform == 'darwin' or platform == 'mac':
+        run('clear' , shell=True)
+    else:
+        run('clear' ,shell=True)
 
 def clear():
     cls()
-
+cls()
 #NOTE: Work in progress 😅
