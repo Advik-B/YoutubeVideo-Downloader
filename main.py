@@ -29,5 +29,34 @@ def cls():
 
 def clear():
     cls()
+
 cls()
+
+menu_dict = {
+
+    1:'search',
+    2:'link',
+
+}
+
+menu_dict2 = {}
+
+for key , val in menu_dict.items():
+    menu_dict2.update({val:key})
+
+print(menu_dict2)
+
+menu = f"""\n
+
+--------------
+| 1 | {menu_dict[1]} |
+| 2 | {menu_dict[2]}   |
+--------------
+"""
+
+
+while True:
+    print('How do you want download your video?')
+    print(menu)
+
 #NOTE: Work in progress 😅
