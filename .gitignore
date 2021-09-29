@@ -1,7 +1,11 @@
-# Videos
+# Media
 *.mp3
 *.mp4
 *.webm
 *.jpg
+
+
+# Python
+*__pycache__
 *.pyc
 *.test.py
