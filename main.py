@@ -101,7 +101,7 @@ while True:
                             print('NO RESULTS FOUND')
                             exit(0)
                         number_of_downloaded = 0
-                        while number_of_downloaded <= found_vidnum:
+                        while number_of_downloaded < found_vidnum:
                             number_of_downloaded += 1
                             print(f'Downloading video {number_of_downloaded} out of {found_vidnum}')
                             print()
@@ -109,6 +109,7 @@ while True:
                             download_AV(link_list[number_of_downloaded - 1])
                             print('Done!')
                             sleep(.3)
+                            cls()
             else:
                 cls()
                 print('Ok. downloading vids ')
@@ -120,7 +121,7 @@ while True:
                     print('NO RESULTS FOUND')
                     exit(0)
                 number_of_downloaded = 0
-                while number_of_downloaded <= found_vidnum:
+                while number_of_downloaded < found_vidnum:
                     number_of_downloaded += 1
                     print(f'Downloading video {number_of_downloaded} out of {found_vidnum}')
                     print()
