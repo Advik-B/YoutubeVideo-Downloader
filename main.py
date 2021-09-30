@@ -22,10 +22,8 @@ def cls():
 
     if platform == 'windows':
         run('cls' , shell=True)
-    elif platform == 'linux' or platform == 'darwin' or platform == 'mac':
-        run('clear' , shell=True)
     else:
-        run('clear' ,shell=True)
+        run('clear' , shell=True)
 
 def clear():
     cls()

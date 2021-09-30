@@ -21,7 +21,6 @@ def search(query , results:int=10) -> list:
     import urllib.parse
     import re
 
-    tmp = list()
     format_of_link = r"watch\?v=(\S{11})"
     raw_query = query
     print()
@@ -29,12 +28,10 @@ def search(query , results:int=10) -> list:
     html = urllib.request.urlopen(f"https://www.youtube.com/results?search_query={query}")
 
     videos = re.findall(format_of_link , html.read().decode())
-    for video in videos:
-        tmp.append(f'https://www.youtube.com/watch?v={video}')
+    tmp = [f'https://www.youtube.com/watch?v={video}' for video in videos]
     while True:
         try:
             return tmp[:results]
-            break
         except IndexError:
             results -= 1
             continue

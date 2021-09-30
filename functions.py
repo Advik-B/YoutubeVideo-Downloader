@@ -20,7 +20,7 @@ def download_thumb(link:str , outimage:str=None) -> None:
 	video = new(link)
 	thumb  = (str(video.getbestthumb).split('Thumbnail: ')[1]).replace('>' , '').replace('default.jpg' , 'sddefault.jpg')
 	r=requests.get(thumb ,allow_redirects=True , timeout=5)
-	if outimage == None:
+	if outimage is None:
 		outfilenum = 1
 		while True:
 			outfile = f'./thumb{outfilenum}.jpg'

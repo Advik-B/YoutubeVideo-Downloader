@@ -20,11 +20,7 @@ cmd.run('python -m pip install pylint' , shell=True , cwd=cwd)
 
 files_n_dirs = os.listdir()
 
-files_to_test = list()
-
-for file in files_n_dirs:
-    if file.endswith('.py'):
-        files_to_test.append(file)
+files_to_test = [file for file in files_n_dirs if file.endswith('.py')]
 
 print('The following files will be checked:\n')
 
