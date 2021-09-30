@@ -1,0 +1,6 @@
+colorama
+youtube_dl
+pafy
+simpleaudio
+pillow
+moviepy
