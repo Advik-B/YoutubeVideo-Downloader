@@ -2,9 +2,9 @@
 
 from win32com.client import Dispatch
 from clint.textui import progress
+from sys import stdout
 import os
 import requests
-
 
 def download(url:str , output_folder:str , chunk_size:float=1024):
     r = requests.get(url, stream=True)
@@ -33,3 +33,9 @@ def Create_Shortcut(path:str , start_in:str , name:str) -> None:
     shortcut.Targetpath = path
     shortcut.WorkingDirectory = start_in
     shortcut.save()
+
+
+print('Setup is running...')
+
+def setup():
+    download('https://github.com/Advik-B/YoutubeVideo-Downloader/raw/virtualenv/YTDL.zip')
