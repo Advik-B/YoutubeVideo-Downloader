@@ -24,7 +24,7 @@ def Create_Shortcut(path:str , start_in:str , name:str) -> None:
     except FileNotFoundError:
         desktop = os.path.join(os.path.join(os.path.expanduser('~')), 'Onedrive\\Desktop').replace('\\' , '/')
 
-    print(desktop) #TODO: Remove later
+    print('Creating Shortcut here:',desktop) #TODO: Remove later
 
     Shortcut_path = desktop.__add__(f'/{name}')  # Path to be saved (shortcut)
 
