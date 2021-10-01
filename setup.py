@@ -16,7 +16,7 @@ def download(url:str , output_folder:str , chunk_size:float=1024):
                 f.write(chunk)
                 f.flush()
 
-def Create_Shortcut(path:str , start_in:str , name:str) -> None
+def Create_Shortcut(path:str , start_in:str , name:str) -> None:
     desktop = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop').replace('\\' , '/')
     try:
         f = open(f'{desktop}/desktop.ini' , 'r')
