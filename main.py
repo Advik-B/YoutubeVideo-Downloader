@@ -1,6 +1,7 @@
 from platform import system
 from subprocess import run
 from time import sleep
+import tempfile
 try:
     from functions import *
     from search import *
@@ -134,10 +135,18 @@ try:
             link = input('~~|: ')
             cls()
             print('Downloading video ...\n')
+            tempdir = tempfile.mkdtemp()
             try:
+                img = getthumb(link)
+                with open(f'{tempdir}\\1.jpg' , 'wb') as f:
+                    f.write(img)
+                image = Image.open(f'{tempdir}\\1.jpg')
+                image.show()
                 download_AV(link)
                 print('Done!')
-            except ValueError:
+                os.remove(os.path.join(tempdir , '1.jpg'))
+                
+            except FileExistsError:
                 print('NOT A VALID LINK')
 
 
