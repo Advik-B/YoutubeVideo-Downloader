@@ -32,7 +32,7 @@ for file in files_to_test:
             , 'green', attrs=['bold'])
         print()
         cprint((f'{":"*40}: START :{":"*40}').center(80) ,'cyan', attrs=['reverse', 'bold'])
-        run('python3 -m pytest %s' % file, timeout=20, shell=True)
+        run('python3 -m pytest %s' % file, timeout=60, shell=True)
         cprint((f'{":"*40}: END :{":"*40}').center(80) ,'cyan', attrs=['reverse', 'bold'])
         print('\n'*4)
 
