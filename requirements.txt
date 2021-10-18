@@ -2,3 +2,5 @@ youtube_dl
 pafy
 ttkthemes
 termcolor
+pyflakes
+pylint
