@@ -12,3 +12,4 @@ install:
 # command to run tests
 script:
   - python3 runtests.py
+  - python3 lint.py
