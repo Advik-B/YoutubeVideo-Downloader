@@ -32,4 +32,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8 and pyflakes
       run: |
-        python run-tests.py -d ${{ github.event.inputs.dir }}
+        python lint.py -d ${{ github.event.inputs.dir }}
