@@ -20,7 +20,7 @@ files_to_test = listfiles(os.getcwd(), '*.py')
 cprint('The following file(s) will be checked:\n', 'green', attrs=['bold', 'underline'])
 
 for file in files_to_test:
-    cprint(f'  {file}' , 'yellow', attrs=['bold'])
+    cprint(f' {file}' , 'yellow', attrs=['bold'])
 
 
 print()
@@ -33,8 +33,8 @@ print()
 for file in files_to_test:
     cprint(f'Checking: {file} 🔎 ', 'green', attrs=['bold', 'underline'])
     print()
-    o = cmd.getoutput(f'python -m pyflakes {file}')
-    p = cmd.getoutput(f'python -m pylint {file}')
+    o = cmd.getoutput(f'python3 -m pyflakes {file}') # NOTE: Only works on linux
+    p = cmd.getoutput(f'python3 -m pylint {file}') # NOTE: Only works on linux
 
     if not o or not p:
         cprint('No problems found!','green', attrs=['bold', 'underline'])
@@ -67,7 +67,7 @@ for file in fnames:
 print()
 
 for file in files_to_test:
-    if file.split('\\')[-1] == '.runtests.py':
+    if file.split('\\')[-1] == 'runtests.py':
         pass
     else:
         cprint('Testing: %s' % file#.
@@ -75,7 +75,7 @@ for file in files_to_test:
         print()
         cprint((f'{":"*40}: START :{":"*40}').center(80) ,'cyan', attrs=['reverse', 'bold'])
         try:
-            run('python3 -m pytest %s' % file, timeout=60, shell=True)
+            run('python3 -m pytest %s' % file, timeout=120, shell=True)# NOTE: Only works on linux
         except TimeoutExpired as error:
             cprint(error, color='red', attrs=['bold'])
 
