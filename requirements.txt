@@ -4,3 +4,5 @@ ttkthemes
 termcolor
 pyflakes
 pylint
+moviepy
+simpleaudio
