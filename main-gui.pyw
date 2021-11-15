@@ -64,7 +64,7 @@ class temp():
             checkin_img = ImageTk.PhotoImage(image=Image.open('assets/icons/~.png'))
             
             def leave(page):
-                os.system(f'taskkill /f /im ytdl.exe')
+                os.system(f'taskkill /f /im pythonw.exe')
                 global running
                 running = False
                 print(page)
@@ -155,7 +155,7 @@ if __name__ == '__main__':
     æ_ = Thread(target=WX._validate_link)
     æ_.start()
     app.mainloop()
-    os.system('taskkill /f /im ytdl.exe')
+    os.system('taskkill /f /im pythonw.exe')
 
 
 #NOTE: Work in progress 😅
